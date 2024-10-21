@@ -192,6 +192,8 @@ preprocesstopic='iot-preprocess'
 maintopic,producerid=datasetup(maintopic,preprocesstopic)
 print("Started Preprocessing: ", maintopic,producerid)
 
+preprocesslogic='MIN,MAX,COUNT,VARIANCE,OUTLIERS,ANOMPROB'   
+
 async def startviper():
 
         print("Start Preprocess-iot-monitor-customdata Request:",datetime.datetime.now())
@@ -202,7 +204,7 @@ async def startviper():
           except Exception as e:
             print("ERROR:",e)
             continue
-preprocesslogic='MIN,MAX,COUNT,VARIANCE,OUTLIERS,ANOMPROB'   
+
 async def spawnvipers():
 
     loop.run_until_complete(startviper())
