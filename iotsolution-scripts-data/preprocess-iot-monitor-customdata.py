@@ -170,7 +170,7 @@ latlong=lat:long'
      identifier = "IoT device performance and failures"
 
      # if dataage - use:dataage_utcoffset_timetype
-     preprocesslogic='anomprob,trend,avg'
+     preprocesslogic='MIN,MAX,COUNT,VARIANCE,OUTLIERS,ANOMPROB'
 
      pathtotmlattrs='oem=n/a,lat=n/a,long=n/a,location=n/a,identifier=n/a'          
      try:
@@ -190,9 +190,7 @@ latlong=lat:long'
 maintopic='iot-mainstream'
 preprocesstopic='iot-preprocess'
 maintopic,producerid=datasetup(maintopic,preprocesstopic)
-print("Started Preprocessing: ", maintopic,producerid)
-
-preprocesslogic='MIN,MAX,COUNT,VARIANCE,OUTLIERS,ANOMPROB'   
+print("Started Preprocessing: ", maintopic,producerid) 
 
 async def startviper():
 
